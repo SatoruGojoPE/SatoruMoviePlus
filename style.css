@@ -1,0 +1,120 @@
+/* General */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  color: white;
+  height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+  z-index: 1;
+}
+
+/* 🎥 Fondo de video */
+#bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  opacity: 0.9; /* puedes ajustar si quieres más claro u oscuro */
+}
+
+/* 👤 Personajes decorativos */
+.personaje {
+  position: absolute;
+  top: 50%;
+  width: 400px;
+  transform: translateY(-50%);
+  opacity: 0.8;
+  z-index: 2;
+}
+.personaje.izquierda {
+  left: 0;
+}
+.personaje.derecha {
+  right: 0;
+}
+
+/* Contenedor principal */
+.container {
+  text-align: center;
+  padding: 40px 20px;
+  z-index: 3;
+  position: relative;
+}
+
+/* 🖼️ Encabezado */
+.header .logo {
+  width: 200px;
+  margin: 0 auto;
+}
+
+/* 📝 Descripción */
+.descripcion {
+  margin: 20px auto;
+  max-width: 600px;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  background-color: rgba(0, 0, 0, 0.4); /* fondo oscuro translúcido */
+  padding: 15px;
+  border-radius: 10px;
+}
+
+/* 📱 Botones */
+.botones, .creador {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+}
+
+.boton {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 15px 25px;
+  color: white;
+  text-decoration: none;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 400px;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  backdrop-filter: blur(5px);
+  transition: background 0.3s ease;
+}
+
+.boton:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* 🖼️ Iconos dentro de los botones */
+.icono {
+  width: 30px;
+  height: 30px;
+}
+
+.header p {
+  font-size: 1.6rem; /* Puedes subir a 2rem si lo quieres aún más grande */
+  margin-top: 10px;
+}
+
+/* 🔻 Ocultar personajes en pantallas pequeñas en vertical */
+@media screen and (max-width: 768px) and (orientation: portrait) {
+  .personaje {
+    display: none;
+  }
+}
+
+/* ✅ Mostrar y ajustar en pantallas más grandes o en modo horizontal */
+@media screen and (min-width: 600px) and (orientation: landscape) {
+  .personaje {
+    display: block;
+    width: 400px; /* Puedes ajustar tamaño para horizontal */
+  }
+}
